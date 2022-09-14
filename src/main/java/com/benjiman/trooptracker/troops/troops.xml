@@ -1,0 +1,64 @@
+<?xml version=\'931.0\'94 encoding=\'93UTF-8\'94?>
+<troops>
+	<troop>
+		<name>Ben Sutton</name>
+		<Number>1234111</number>
+		<percentage>36</percentage>
+	</troop>
+</troops>
+<troops>
+	<troop>
+		<name>Dave Smith</name>
+		<Number>1234112</number>
+		<percentage>16</percentage>
+	</troop>
+</troops>
+<troops>
+	<troop>
+		<name>Stephen Reed</name>
+		<Number>1234113</number>
+		<percentage>96</percentage>
+	</troop>
+</troops>
+<troops>
+	<troop>
+		<name>John David</name>
+		<Number>1234114</number>
+		<percentage>67</percentage>
+	</troop>
+</troops>
+<troops>
+	<troop>
+		<name>Linda Belcha</name>
+		<Number>1234115</number>
+		<percentage>36</percentage>
+	</troop>
+</troops>
+<troops>
+	<troop>
+		<name>Bobs Burgers</name>
+		<Number>1234116</number>
+		<percentage>6</percentage>
+	</troop>
+</troops>
+<troops>
+	<troop>
+		<name>Allister Campbell</name>
+		<Number>1234117</number>
+		<percentage>10</percentage>
+	</troop>
+</troops>
+<troops>
+	<troop>
+		<name>Micheal Johnson</name>
+		<Number>1234118</number>
+		<percentage>13</percentage>
+	</troop>
+</troops>
+<troops>
+	<troop>
+		<name>Samanth Jones</name>
+		<Number>1234119</number>
+		<percentage>86</percentage>
+	</troop>
+</troops>

@@ -1,59 +1,57 @@
 package com.benjiman.trooptracker.troops;
 
-// This is the trooper  that will hold info fo the troopers from the XML file
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.LinkedList;
+import java.util.List;
 
+import javax.swing.text.Document;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.NodeList;
+
+// This method reads the data from an XML file and then returns a linkedlist list "List<trooper>".
 public class TrooperList {
-  private String name;
-  private int num;
-  private int percentage;
 
-  public void Trooper(String name, int num, int percentage) {
-    this.name = name;
-    this.num = num;
-    this.percentage = percentage;
-  }
+  public List<Trooper> getTrooperFromXML() {
+    List<Trooper> list = new LinkedList<Trooper>();
 
-  // These are the getters and setters for the trooper information
-  /**
-   * @return String return the name
-   */
-  public String getName() {
-    return name;
-  }
+    try {
+      // locates the XML file
+      Path filePath = Paths.get("src/main/java/com/benjiman/trooptracker/troops.xml");
+      File file = new File(String.valueOf(filePath.toAbsolutePath()));
 
-  /**
-   * @param name the name to set
-   */
-  public void setName(String name) {
-    this.name = name;
-  }
+      if (file.exists()) {
+        DocumentBuilderFactory DocumentBuilderFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+        Document document = documentBuilder.parse(String.valueOf(filePath.toAbsolutePath()));
 
-  /**
-   * @return int return the num
-   */
-  public int getNum() {
-    return num;
-  }
+        // Gets the elements "Name" and "Numbers" from the troops.xml file and add them
+        // to a node list
+        NodeList[] player = { document.getElementsByTagName("name"), document.getElementsByTagName("number"),
+            document.getElementsByTagName("percentage") };
 
-  /**
-   * @param num the num to set
-   */
-  public void setNum(int num) {
-    this.num = num;
-  }
+        // For loop for getting the information from the node list and collect the
+        // values "name" and "number"
+        for (int i = 0; i < nodeList.getLength(); i++) {
+          String name = Trooper[0].item(i).getTextContent();
+          int number = Integer.parseInt(Trooper[1].item(i).getTextContent());
+          int percentage = Integer.parseInt(Trooper[2].item(i).getTextContent());
+          Trooper newTrooper = new Trooper(name, number, percentage);
 
-  /**
-   * @return int return the percentage
-   */
-  public int getPercentage() {
-    return percentage;
-  }
-
-  /**
-   * @param percentage the percentage to set
-   */
-  public void setPercentage(int percentage) {
-    this.percentage = percentage;
+          // Then add the new trooper to the trooper list
+          troopers.add(newTrooper);
+        }
+      } else {
+        System.out.println("File not found.");
+      }
+    } catch (Exception e) {
+      System.out.println(e.getMessage());
+    }
+    // Returns the final set of troopers
+    return troopers;
   }
 
 }
